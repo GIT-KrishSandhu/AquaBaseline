@@ -38,17 +38,17 @@
   - [x] Validation page with live results, ablation, sensitivity, limitations
   - [x] About page with AI tools disclosed, limitations, student takeaways
 
-- [ ] **M6: Polish & accessibility**
-  - [ ] Mobile responsive audit (390px, 768px, 1440px)
-  - [ ] WCAG AA compliance, focus rings, semantic HTML
-  - [ ] Empty and error states
-  - [ ] `npm run build` succeeds with zero errors
+- [x] **M6: Polish & accessibility**
+  - [x] Mobile responsive audit (390px, 768px, 1440px)
+  - [x] WCAG AA compliance, focus rings, semantic HTML
+  - [x] Empty and error states
+  - [x] `npm run build` succeeds with zero errors
 
-- [ ] **M7: Deliverables & documentation**
-  - [ ] Portfolio deck `KrishSandhu_ProjectPortfolio.pptx` (max 8 slides)
-  - [ ] 60-second video kit (`script_60s.md`, `shotlist.md`, demo recording)
-  - [ ] Full screenshots of all pages
-  - [ ] `SUBMISSION_CHECKLIST.md` with "Student must do" tasks
-  - [ ] Docs (`ARCHITECTURE.md`, `AI_TOOLS_USED.md`, `LIMITATIONS.md`, `DECISIONS.md`, `README.md`)
-  - [ ] Git init and initial commit (no push)
+- [x] **M7: Deliverables & documentation**
+  - [x] Portfolio deck `KrishSandhu_ProjectPortfolio.pptx` (max 8 slides, speaker notes, live data)
+  - [x] 60-second video kit (`script_60s.md`, `shotlist.md`, `demo_capture.webm`)
+  - [x] Full screenshots of all 10 pages + mobile
+  - [x] `SUBMISSION_CHECKLIST.md` with "Student must do" tasks
+  - [x] Docs (`ARCHITECTURE.md`, `AI_TOOLS_USED.md`, `LIMITATIONS.md`, `DECISIONS.md`, `README.md`)
+  - [x] Git init and initial commit (no push)
 
