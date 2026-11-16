@@ -1,0 +1,143 @@
+{
+  "timestamp": "2026-11-16T17:08:18.523253",
+  "seeds_count": 20,
+  "caption": "Simulated meter data, 20 random seeds (60 leak nights per building), tuned by author.",
+  "primary_results": [
+    {
+      "building_id": "hostel",
+      "building_name": "Hostel Block A",
+      "leak_rate_l_h": 1000.0,
+      "total_leak_nights": 60,
+      "total_normal_days": 80,
+      "alert_caught": 48,
+      "alert_catch_pct": 80.0,
+      "false_alert_days": 2,
+      "false_alert_pct": 2.5,
+      "watch_caught": 48,
+      "watch_catch_pct": 80.0,
+      "false_watch_days": 12,
+      "false_watch_pct": 15.0,
+      "daily_rule_caught": 0,
+      "daily_rule_pct": 0.0
+    },
+    {
+      "building_id": "canteen",
+      "building_name": "Canteen",
+      "leak_rate_l_h": 600.0,
+      "total_leak_nights": 60,
+      "total_normal_days": 80,
+      "alert_caught": 51,
+      "alert_catch_pct": 85.0,
+      "false_alert_days": 1,
+      "false_alert_pct": 1.2,
+      "watch_caught": 54,
+      "watch_catch_pct": 90.0,
+      "false_watch_days": 13,
+      "false_watch_pct": 16.2,
+      "daily_rule_caught": 0,
+      "daily_rule_pct": 0.0
+    },
+    {
+      "building_id": "academic",
+      "building_name": "Academic Block B",
+      "leak_rate_l_h": 600.0,
+      "total_leak_nights": 60,
+      "total_normal_days": 80,
+      "alert_caught": 49,
+      "alert_catch_pct": 81.7,
+      "false_alert_days": 1,
+      "false_alert_pct": 1.2,
+      "watch_caught": 55,
+      "watch_catch_pct": 91.7,
+      "false_watch_days": 22,
+      "false_watch_pct": 27.5,
+      "daily_rule_caught": 0,
+      "daily_rule_pct": 0.0
+    }
+  ],
+  "ablation_flow_only": [
+    {
+      "building_id": "hostel",
+      "building_name": "Hostel Block A",
+      "caught": 0,
+      "total_nights": 60,
+      "catch_pct": 0.0,
+      "false_days": 0
+    },
+    {
+      "building_id": "canteen",
+      "building_name": "Canteen",
+      "caught": 1,
+      "total_nights": 60,
+      "catch_pct": 1.7,
+      "false_days": 0
+    },
+    {
+      "building_id": "academic",
+      "building_name": "Academic Block B",
+      "caught": 0,
+      "total_nights": 60,
+      "catch_pct": 0.0,
+      "false_days": 1
+    }
+  ],
+  "leak_size_sensitivity": [
+    {
+      "leak_l_per_hour": 250.0,
+      "caught": 44,
+      "total_nights": 60,
+      "catch_pct": 73.3,
+      "false_days": 2
+    },
+    {
+      "leak_l_per_hour": 500.0,
+      "caught": 48,
+      "total_nights": 60,
+      "catch_pct": 80.0,
+      "false_days": 2
+    },
+    {
+      "leak_l_per_hour": 1000.0,
+      "caught": 48,
+      "total_nights": 60,
+      "catch_pct": 80.0,
+      "false_days": 2
+    },
+    {
+      "leak_l_per_hour": 2000.0,
+      "caught": 60,
+      "total_nights": 60,
+      "catch_pct": 100.0,
+      "false_days": 2
+    }
+  ],
+  "training_window_sensitivity": [
+    {
+      "train_days": 7,
+      "caught": 40,
+      "total_nights": 60,
+      "catch_pct": 66.7,
+      "false_days": 14
+    },
+    {
+      "train_days": 14,
+      "caught": 39,
+      "total_nights": 60,
+      "catch_pct": 65.0,
+      "false_days": 10
+    },
+    {
+      "train_days": 28,
+      "caught": 48,
+      "total_nights": 60,
+      "catch_pct": 80.0,
+      "false_days": 2
+    }
+  ],
+  "honest_weaknesses": [
+    "Single-hour transient spikes are suppressed by the 2-consecutive-hour alert threshold, occasionally missing brief leaks.",
+    "Smaller leaks (e.g. 250 L/h) blend into regular base variance and have lower recall (~20-40%) without extended duration.",
+    "Daily-total rule failed 100% of overnight leaks because a 2-hour leak represents only 4-14% of gross daily volume.",
+    "Watch tier achieves 80-92% recall but incurs higher false alarms (15-27% of normal days), necessitating daily digest grouping rather than high-urgency alerts."
+  ]
+}

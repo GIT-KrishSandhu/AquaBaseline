@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #F0F9FF;
+  --bg-soft: #E0F2FE;
+  --surface: #FFFFFF;
+  --border: #D8E9F0;
+  --ink: #0B2E3B;
+  --muted: #4F6B78;
+  --primary: #0D9488;
+  --primary-dark: #0F766E;
+  --cyan: #06B6D4;
+  --cyan-soft: #CFFAFE;
+  --green: #16A34A;
+  --green-soft: #DCFCE7;
+  --amber: #B45309;
+  --danger: #DC2626;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, sans-serif;
+  background-color: var(--bg);
+  color: var(--ink);
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+}
+
+.hero-gradient {
+  background: linear-gradient(135deg, #E0F2FE 0%, #ECFEFF 45%, #DCFCE7 100%);
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
