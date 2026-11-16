@@ -398,3 +398,4 @@ export const ScenarioLab: React.FC = () => {
     </div>
   );
 };
+

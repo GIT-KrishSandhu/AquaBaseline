@@ -24,3 +24,4 @@
 - **Tone:** Confident, scientific, and honest. Avoid buzzwords; speak naturally.
 - **Microphone:** Record in a quiet room with a headset or lavalier mic.
 - **Timing:** 148 spoken words at a comfortable conversational pace of ~150 words/minute fits cleanly into 58–60 seconds.
+

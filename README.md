@@ -71,3 +71,4 @@ npm run test
 2. **Assumed Baselines:** Per-capita consumption (276 L/day), leak losses (12%), campus size (5,000), and water targets (10% cut) are planning assumptions.
 3. **Synthetic Dataset Caveat:** Public Kaggle data analyzed on the Research page appears synthetic (as revealed by the implied 5-billion population check). Findings describe patterns in the dataset.
 4. **AI Assistants Disclosed:** Claude was used for assignment planning and drafting; Google Antigravity was used for autonomous full-stack engineering and verification.
+

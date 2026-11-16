@@ -103,3 +103,4 @@ flowchart TD
 | `/api/research/summary` | GET | 25-year trend series, country means, and histogram |
 | `/api/validation/results` | GET | Retrieve empirical 20-seed validation results |
 | `/api/validation/run` | POST | Re-run 20-seed experiment dynamically |
+

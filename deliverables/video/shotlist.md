@@ -26,3 +26,4 @@
 4. Import your audio voice-over recorded using `script_60s.md`.
 5. Align audio markers with the 7 visual shots above.
 6. Export as `KrishSandhu_AquaBaseline_1MinDemo.mp4` (1080p or 720p, under 100 MB).
+

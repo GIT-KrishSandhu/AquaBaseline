@@ -43,3 +43,4 @@ During Assignment 2A data exploration, the student analyzed the Kaggle **Global 
 
 - No commercial pricing, vendor contracts, or hardware procurement commitments are claimed.
 - Projected savings (~50 million litres per year) represent theoretical conservation potential assuming a 10% reduction is achieved across a 5,000-person campus.
+

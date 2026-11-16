@@ -42,3 +42,4 @@ As an AI assistant, there are non-negotiable real-world actions that only Krish 
   Ensure that Google Drive links for your PPTX, PDF, and video are set to *"Anyone with the link can view"* so the 1M1B evaluation jury can view them without login barriers.
 - [ ] **6. Submit Official 1M1B Capstone Form:**  
   Submit your project title, GitHub link, video link, portfolio presentation, and written answers on the 1M1B evaluation submission portal.
+

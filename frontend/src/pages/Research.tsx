@@ -323,3 +323,4 @@ export const Research: React.FC = () => {
     </div>
   );
 };
+

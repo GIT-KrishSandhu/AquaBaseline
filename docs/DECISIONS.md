@@ -43,3 +43,4 @@
 - **Context:** The 1M1B submission guide specifies "max 7-8 slides" while some prompts mentioned "up to 8 slides".
 - **Decision:** Standardized on exactly **8 slides** strictly matching the student journey order from problem to ethical disclosure.
 - **Outcome:** Ensures complete compliance with the 1M1B submission rubric while preserving large, readable typography and screenshot evidence.
+

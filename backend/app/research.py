@@ -134,3 +134,4 @@ def get_research_summary() -> Dict[str, Any]:
         },
         "honesty_notice": "Public dataset findings describe patterns 'in the dataset' (which appears synthetic). AquaBaseline uses these findings to demonstrate why fixed global rules fail and why automated integrity audits are mandatory.",
     }
+

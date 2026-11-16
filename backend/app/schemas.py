@@ -104,3 +104,4 @@ class ResearchSummaryResponse(BaseModel):
     distribution_histogram: List[Dict[str, Any]]
     headline_stats: Dict[str, Any]
     honesty_notice: str
+

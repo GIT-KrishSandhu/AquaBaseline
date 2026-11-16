@@ -256,7 +256,7 @@ export interface ValidationResultsResponse {
   honest_weaknesses: string[];
 }
 
-const BASE_URL = '/api';
+const BASE_URL = import.meta.env.VITE_API_BASE_URL || '/api';
 
 async function handleResponse<T>(res: Response): Promise<T> {
   if (!res.ok) {

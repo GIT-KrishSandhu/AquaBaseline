@@ -59,3 +59,4 @@ I, **Krish Sandhu**, confirm that:
 - I directed all design requirements, problem scopes, and architectural trade-offs.
 - I reviewed and refined every visual interface and written explanation.
 - No pilot results, partner commitments, or cost savings were fabricated; all numbers are labeled as empirical simulation measurements or assumptions.
+

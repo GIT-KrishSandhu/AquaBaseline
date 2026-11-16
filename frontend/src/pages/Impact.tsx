@@ -505,3 +505,4 @@ export const Impact: React.FC = () => {
     </div>
   );
 };
+
