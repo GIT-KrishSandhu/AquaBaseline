@@ -39,7 +39,7 @@ from .db import (
 )
 from .metrics import compute_esg_and_scaleup
 from .quality import audit_dataset_csv
-from .research import get_research_summary, DATA_PATH
+from .research import get_research_summary, get_dataset_path
 
 from contextlib import asynccontextmanager
 
@@ -64,7 +64,8 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-VALIDATION_RESULTS_FILE = os.path.join(os.path.dirname(__file__), "data", "validation_results.json")
+BUNDLED_VAL_FILE = os.path.join(os.path.dirname(__file__), "data", "validation_results.json")
+TMP_VAL_FILE = "/tmp/validation_results.json"
 
 @app.get("/api/health")
 def health_check():
@@ -232,15 +233,9 @@ async def validate_csv_file(file: UploadFile = File(...)):
 
 @app.get("/api/data-quality/sample", response_model=DataQualityReport)
 def sample_dataset_report():
-    if not os.path.exists(DATA_PATH):
-        alt = os.path.join(os.path.dirname(__file__), "..", "..", "..", "AquaBaseline_Capstone_Pack", "data", "cleaned_water_dataset.csv")
-        target_path = alt if os.path.exists(alt) else "cleaned_water_dataset.csv"
-    else:
-        target_path = DATA_PATH
-        
+    target_path = get_dataset_path()
     with open(target_path, "rb") as f:
         contents = f.read()
-        
     return audit_dataset_csv(contents, filename="cleaned_water_dataset.csv")
 
 @app.get("/api/research/summary", response_model=ResearchSummaryResponse)
@@ -249,21 +244,22 @@ def research_summary_endpoint():
 
 @app.get("/api/validation/results")
 def get_validation_results():
-    if not os.path.exists(VALIDATION_RESULTS_FILE):
+    target_file = TMP_VAL_FILE if os.path.exists(TMP_VAL_FILE) else BUNDLED_VAL_FILE
+    if not os.path.exists(target_file):
         raise HTTPException(
             status_code=404,
             detail="Validation results have not been generated yet. Run scripts/run_validation.py or trigger POST /api/validation/run"
         )
-    with open(VALIDATION_RESULTS_FILE, "r") as f:
+    with open(target_file, "r") as f:
         data = json.load(f)
     return data
 
 @app.post("/api/validation/run")
 def trigger_validation_run(background_tasks: BackgroundTasks):
-    from ..scripts_helper import execute_full_validation_experiment
-    # Run synchronously or in background
+    from .validation import run_full_validation_suite
     try:
-        results = execute_full_validation_experiment(save_path=VALIDATION_RESULTS_FILE)
+        save_target = TMP_VAL_FILE if os.environ.get("VERCEL") else BUNDLED_VAL_FILE
+        results = run_full_validation_suite(save_path=save_target)
         return {"status": "success", "message": "Validation experiment executed and saved.", "results": results}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))

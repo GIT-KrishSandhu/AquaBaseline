@@ -8,17 +8,22 @@ import numpy as np
 import pandas as pd
 from typing import Dict, Any, List
 
-DATA_PATH = os.path.join(os.path.dirname(__file__), "..", "..", "data", "cleaned_water_dataset.csv")
+def get_dataset_path() -> str:
+    candidates = [
+        os.path.join(os.path.dirname(__file__), "data", "cleaned_water_dataset.csv"),
+        os.path.join(os.path.dirname(__file__), "..", "..", "data", "cleaned_water_dataset.csv"),
+        os.path.join(os.getcwd(), "data", "cleaned_water_dataset.csv"),
+        os.path.join(os.path.dirname(__file__), "..", "..", "..", "AquaBaseline_Capstone_Pack", "data", "cleaned_water_dataset.csv"),
+        "cleaned_water_dataset.csv"
+    ]
+    for p in candidates:
+        if os.path.exists(p):
+            return p
+    return candidates[0]
 
 def get_research_summary() -> Dict[str, Any]:
     """Compute all analytical series and honesty metrics from the 500-row dataset."""
-    if not os.path.exists(DATA_PATH):
-        # Fallback to pack path if needed
-        alt_path = os.path.join(os.path.dirname(__file__), "..", "..", "..", "AquaBaseline_Capstone_Pack", "data", "cleaned_water_dataset.csv")
-        path = alt_path if os.path.exists(alt_path) else "cleaned_water_dataset.csv"
-    else:
-        path = DATA_PATH
-        
+    path = get_dataset_path()
     df = pd.read_csv(path)
     
     # 1. Trend series by year (2000-2024)

@@ -13,7 +13,10 @@ from .sim import BUILDINGS, simulate_raw, aggregate_hourly
 from .model import train_and_score, extract_alert_incidents
 from .quality import validate_stream_readings
 
-DB_PATH = os.path.join(os.path.dirname(__file__), "data", "aquabaseline.db")
+if os.environ.get("VERCEL"):
+    DB_PATH = "/tmp/aquabaseline.db"
+else:
+    DB_PATH = os.path.join(os.path.dirname(__file__), "data", "aquabaseline.db")
 
 # In-memory caches for fast API querying
 _CACHED_HOURLY: Dict[str, pd.DataFrame] = {}
